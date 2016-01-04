@@ -1,0 +1,23 @@
+CC	= cc
+CFLAGS	=
+INC 	= -I../include
+LDIR 	= -L../lib
+LIBS	= -lmylist -lmy
+SRCS	= testmy2.c
+OBJS	= 
+TARGET	= testmy2
+
+all: $(TARGET)
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) $(INC) $(LDIR) $(SRCS) $(LIBS) -o $(TARGET)
+
+rmobj:
+	rm -f $(OBJS)
+
+clean:
+	rm -f $(OBJS) $(TARGET)
+	rm -f *~
+
+fclean: clean
+
+re: fclean make
